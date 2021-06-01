@@ -2,25 +2,23 @@ import math
 import unittest
 import random
 def wallis(n):
-    x=1
+    pi=2
     for i in range(n):
-        x=(x*(4*(n**2)/(4*(n**2)-1)))
-        return x
+        pi=pi*4*(i**2)/(4*(i**2)-1)))
+    return pi
 def monte_carlo(n):
     
     circle=0
-    square=0
     
-    for i in range(1,n+1):
+    for i in range(n):
     
-        x=(2*random.random())
-        y=(2*random.random())
+        x=(random.random())
+        y=(random.random())
         distance=(x**2+y**2)**0.5
         if distance<=1:
             circle+=1
-        else:
-            square+=1
-    pi=((4*circle)/square)
+      
+    pi=((4*circle)/n)
     return pi
 
 
